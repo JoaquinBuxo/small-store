@@ -1,12 +1,16 @@
 import React from 'react';
-import { data } from '@/data';
 import ItemCard from './ItemCard';
 
-const Render_list_of_items = () => {
+const Render_list_of_items = ({ items, addItem, removeItem }) => {
   return (
     <div>
-      {data?.map((item) => (
-        <ItemCard key={item.img} item={item} />
+      {items?.map((item) => (
+        <ItemCard
+          key={item.img}
+          item={item}
+          addItem={addItem}
+          removeItem={removeItem}
+        />
       ))}
     </div>
   );
