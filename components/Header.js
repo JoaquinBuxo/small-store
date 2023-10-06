@@ -10,8 +10,8 @@ const Header = ({ items, openCart, setOpenCart }) => {
 
   return (
     <div className='flex justify-between items-center mb-4'>
-      <p>Total items: {totalItems}</p>
-      <p>Total price: {totalPrice} €</p>
+      <p className='text-lg font-semibold'>Total items: {totalItems}</p>
+      <p className='text-lg font-semibold'>Total price: {totalPrice} €</p>
       <Button onClick={() => setOpenCart(!openCart)} Icon={ShoppingCartIcon} />
     </div>
   );

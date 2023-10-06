@@ -3,7 +3,7 @@ import ItemCard from './ItemCard';
 
 const Render_list_of_items = ({ items, addItem, removeItem }) => {
   return (
-    <div>
+    <>
       {items?.map((item) => (
         <ItemCard
           key={item.img}
@@ -12,7 +12,7 @@ const Render_list_of_items = ({ items, addItem, removeItem }) => {
           removeItem={removeItem}
         />
       ))}
-    </div>
+    </>
   );
 };
 
