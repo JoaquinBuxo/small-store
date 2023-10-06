@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import Button from './Button';
+import CartItem from './CartItem';
 
 const CartList = ({ items, openCart, setOpenCart }) => {
   return (
@@ -55,11 +56,7 @@ const CartList = ({ items, openCart, setOpenCart }) => {
                             {items
                               .filter((item) => item.qtty > 0)
                               .map((item) => (
-                                <li key={item.img}>
-                                  <p className='uppercase'>
-                                    {item.img}: {item.qtty}
-                                  </p>
-                                </li>
+                                <CartItem key={item.img} item={item} />
                               ))}
                           </ul>
                         </div>
