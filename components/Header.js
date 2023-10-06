@@ -1,6 +1,8 @@
 import React from 'react';
+import Button from './Button';
+import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 
-const Header = ({ items }) => {
+const Header = ({ items, openCart, setOpenCart }) => {
   const totalItems = items.reduce((total, item) => total + item.qtty, 0);
   const totalPrice = items
     .reduce((total, item) => total + item.price * item.qtty, 0)
@@ -10,6 +12,7 @@ const Header = ({ items }) => {
     <div className='flex justify-between items-center mb-4'>
       <p>Total items: {totalItems}</p>
       <p>Total price: {totalPrice} €</p>
+      <Button onClick={() => setOpenCart(!openCart)} Icon={ShoppingCartIcon} />
     </div>
   );
 };
